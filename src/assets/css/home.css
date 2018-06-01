@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style-type: none;
+}
+
+#wrap {
+    width: 900px;
+    margin: 0 auto;
+}
+
+header{
+    overflow: hidden;
+}
+
+header h1{
+    float: left;
+}
+header nav{
+    overflow: hidden;
+    float: right;
+}
+
+header nav ul li{
+    float: left;
+    margin:0 10px;
+}
