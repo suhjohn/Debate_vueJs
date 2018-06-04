@@ -29,29 +29,18 @@ export default {
     
     components: {
 		
-	},
+    },
+    
+    computed: {
+        messageRoom1(){
+            return this.$store.state.messageRoom1
+        }
+    },
+
 	  
 	data () {
     	return {
             messageRoom1Text: '',
-      		messageRoom1: [
-				{
-					name: 'user 1',
-					message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
-				},
-				{
-					name: 'user 1',
-					message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
-				},
-				{
-					name: 'user 1',
-					message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
-				},
-				{
-					name: 'user 1',
-					message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
-				},
-			],
     	}
   	},
 

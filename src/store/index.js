@@ -14,7 +14,13 @@ const NOTIFICATION_COLLECTION = 'Notification'
 
 const store = new Vuex.Store({
     state: {
-        user: null
+        user: null,
+        messageRoom1: [
+            {
+                name: 'user 1',
+                message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
+            }
+        ],
     },
     getters: {
         isLogined: state => {
