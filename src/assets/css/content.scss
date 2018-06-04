@@ -39,20 +39,25 @@
     .left {
         position: relative;
         border-right:1px solid;
-        display: flex;
-        flex-direction: column;
+        
 
-        .messages{
-            flex: 1;
-            padding: 10px 20px;
-            overflow-y:auto;
-        }
+        > .ready_chat_wrap {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
 
-        .input{
-            border-top:1px solid;
-            align-self: flex-end;
-            width: 100%;
-            padding: 5px 10px;
+            .messages{
+                flex: 1;
+                padding: 10px 20px;
+                overflow-y:auto;
+            }
+    
+            .input{
+                border-top:1px solid;
+                align-self: flex-end;
+                width: 100%;
+                padding: 5px 10px;
+            }
         }
     }
 
