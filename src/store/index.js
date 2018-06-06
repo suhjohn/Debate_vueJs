@@ -18,9 +18,15 @@ const store = new Vuex.Store({
         messageRoom1: [
             {
                 name: 'user 1',
-                message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
+                message: 'heelow',
+                like: {
+                    count: 1,
+                    likeByMe: true
+                }
             }
         ],
+        readyChatActive: true,
+        representChatActive: false,
     },
     getters: {
         isLogined: state => {

@@ -1,5 +1,5 @@
 <template>
-	<div id="wrap" v-on:click="menuActive = false">
+	<div id="wrap">
         <Header />
 
         <Content />
