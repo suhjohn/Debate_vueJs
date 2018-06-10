@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="toggle_wrap">
         <div class="toggle" ref="toggle" v-on:click="toggleChatAction">toggle</div>
 
         <div v-bind:class="{ hide: toggleChat }" class="toggle_chat" ref="toggleChat">
@@ -36,7 +36,11 @@
                 </div>
             </section>
             <div id="footer">
-                <textarea placeholder="Type out your argument! Your argument will be voted on soon"></textarea>
+                <AutoSizeTextarea
+                    :submit="sendAction"
+                    scrollMinHeight="70"
+                    placeholder="Type out your argument! Your argument will be voted on soon"
+                />
                 <button class="send">Submit<br>Argument</button>
             </div>
         </div>
@@ -44,12 +48,14 @@
 </template>
 
 <script>
+import AutoSizeTextarea from './AutoSizeTextarea';
+
 export default {
     name: 'DebateProposal',
     
     components: {
-		
-	},
+        AutoSizeTextarea,
+    },
 	  
 	data () {
     	return {
@@ -97,10 +103,18 @@ export default {
   	},
 
     methods: {
-        toggleChatAction:function(e){
+        toggleChatAction(e){
             this.toggleChat = !this.toggleChat;
         },
+
+        sendAction(){
+
+        }
     }
 }
 </script>
+
+<style lang="scss">
+@import '../assets/css/toggleChat.scss';
+</style>
 

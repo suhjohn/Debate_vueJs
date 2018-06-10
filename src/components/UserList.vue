@@ -1,5 +1,6 @@
 <template>
     <div class="toggle_user_list" v-bind:class="[menuActive == 'user' ? 'active' : '']">
+        <button class="btn btn-close close" v-on:click="closeMenu">close</button>
         <div class="repesenters">
             <div class="header">Repesenters</div>
             <section>
@@ -104,6 +105,12 @@ export default {
     
     mounted(){
     },
+
+    computed: {
+        menuActive(){
+            return this.$store.state.menuActive;
+        }
+    },
 	  
 	data() {
 		return {
@@ -112,8 +119,15 @@ export default {
     },
     
     methods: {
-        
+        closeMenu(){
+            this.$store.dispatch('updateMenuActive', false);
+        },
         
     }
 }
 </script>
+
+
+<style lang="scss">
+@import '../assets/css/userList.scss';
+</style>

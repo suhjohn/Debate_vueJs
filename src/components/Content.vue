@@ -4,8 +4,6 @@
 
         <div class="left">
             <ReadyChat />
-            <UserList/>
-            <Feedback/>
         </div>
 
         <div class="right">
@@ -22,8 +20,6 @@ import DebateChat from './DebateChat';
 import DebateProposal from './DebateProposal';
 
 import Menu from './Menu';
-import UserList from './UserList';
-import Feedback from './Feedback';
 
 export default {
     name: 'Content',
@@ -36,8 +32,6 @@ export default {
         DebateChat,
         DebateProposal,
         Menu,
-        UserList,
-        Feedback
 	},
 	  
 	data() {
@@ -52,3 +46,8 @@ export default {
     }
 }
 </script>
+
+
+<style lang="scss">
+@import '../assets/css/content.scss';
+</style>

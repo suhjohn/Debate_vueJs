@@ -75,3 +75,17 @@ html, body{
 .sub_title_font_color {
     color:orange;
 }
+
+
+
+//backdrop
+.backdrop{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &.black {
+        background: black;
+        opacity: .5;
+    }
+}

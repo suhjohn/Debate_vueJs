@@ -1,5 +1,6 @@
 <template>
     <div class="toggle_feedback" v-bind:class="[menuActive == 'feedback' ? 'active' : '']">
+        <button class="btn btn-close close" v-on:click="closeMenu">close</button>
         <div class="header">
             Give Us Feedback!
         </div>
@@ -22,16 +23,27 @@ export default {
     
     mounted(){
     },
+
+    computed: {
+        menuActive(){
+            return this.$store.state.menuActive;
+        }
+    },
 	  
 	data() {
 		return {
-			
 		};
     },
     
     methods: {
-        
+        closeMenu(){
+            this.$store.dispatch('updateMenuActive', false);
+        },
         
     }
 }
 </script>
+
+<style lang="scss">
+@import '../assets/css/feedback.scss';
+</style>

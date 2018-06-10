@@ -1,0 +1,57 @@
+.alarm_area {
+    position: fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    height:100%;
+    z-index: 500;
+    display: none;
+
+    &.active{
+        display: block;
+    }
+
+    .alram_wrap{
+        display: flex;
+        position: absolute;
+        width: 800px;
+        height: 400px;
+        background: #fff;
+        z-index: 400;
+        top: 50%;
+        left: 50%;
+        margin-top: -200px;
+        margin-left: -400px;
+        border: 1px solid;
+        padding: 20px;
+        xbox-shadow: 2px 1px 2px 3px gray;
+    
+        .alarm_box {
+            display: none;
+            flex-direction: row;
+            height: 100%;
+            flex: 1;
+            align-items: center;
+    
+            &.active{
+                display: flex;
+            }
+    
+            > div:first-child {
+                width: 300px;
+            }
+    
+            > div:last-child {
+                flex: 1;
+        
+                > div {
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: orange;
+                }
+            }
+        }
+    
+    }    
+}
+

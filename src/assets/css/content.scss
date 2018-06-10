@@ -6,34 +6,10 @@
     flex: 1;
     position: relative;
 
-    .menu {
-        background: #555;
-        width: 100px;
-
-        ul {
-            li {
-                height: 70px;
-                text-align: center;
-                line-height: 70px;
-    
-                a {
-                    display: block;
-                    color: #fff;
-                    text-decoration: none;
-                }
-            }
-
-            li.active a {
-                background: orange;
-            }
-        }
-    }
-
     .left,
     .right{
         flex:1;
         overflow-y: auto;
-        xflex-shrink: 0;
     }
 
     .left {
@@ -86,7 +62,7 @@
         position: relative;
 
         .messages{
-            padding:20px 30px;
+            padding:0px 30px;
         }
 
         .row .content > div:first-child{
@@ -110,6 +86,14 @@
                     vertical-align: bottom;
                 }
             }            
+        }
+
+        .toggle_wrap{
+            position: fixed;
+            top:128px;
+            left:50%;
+            margin-left:50px;
+            width:100%;
         }
     }
     
@@ -197,258 +181,3 @@
         }
     }   
 }
-
-
-
-
-.toggle_chat {
-    display: flex;
-    position: absolute;
-    left: 0;
-    width: 500px;
-    height: 500px;
-    background: white;
-    top:0px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 1px 2px;
-    z-index:100;
-
-    &.hide{
-        display: none;
-    }
-
-    header{
-        padding: 10px;
-        text-align: center;
-        background: red;
-        color: #fff;
-    }
-
-    section {
-        overflow-y: auto;
-        flex: 1;
-        overflow-y: auto;
-        box-flex: 1;
-        -webkit-box-flex: 1;
-    }
-    .messages {
-        padding:0 15px;
-    }
-    .row {
-        border-bottom: 1px solid #ddd;
-
-        .label{
-            display: inline-block;
-            background: lightgray;
-            color: #fff;
-            font-size:11px;
-            width:30px;
-            height:18px;
-            line-height:18px;
-            text-align: center;
-            border-radius:4px;
-            padding: 0;
-        }
-    }
-
-    #footer{
-        border-top:1px solid;
-        align-self: flex-end;
-        width:100%;
-        display: flex;
-        height:70px;
-
-        textarea{
-            display: block;
-            flex: 1;
-            border: 0;
-            outline: 0;
-            padding: 10px;
-            resize: none;
-            font-size: 14px;
-        }
-
-        button {
-            width: 76px;
-        }
-    }
-}
-
-
-
-.toggle{
-    position: absolute;
-    left: 0;
-    xmargin-left:100px;
-    top:0px;
-    background: yellowgreen;
-    padding: 2px;
-    border-radius:3px;
-    cursor: pointer;
-    z-index: 200;
-}
-
-.toggle_user_list{
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: #fff;
-    width: 550px;
-    height: 450px;
-    display: flex;
-    border: 1px solid orange;
-    display: none;
-
-    &.active {
-        display: flex;
-    }
-
-    > div{    
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .header{
-    
-        background: #555;
-        padding: 20px 0 20px 20px;
-        color: bisque;
-    }
-}
-
-
-.toggle_user_list > div.repesenters{
-    width: 40%;
-    
-}
-
-.toggle_user_list > div.repesenters .header {
-    border-right: 0.5px solid bisque;
-}
-
-.toggle_user_list > div.all_users{
-    flex: 1;
-}
-
-.toggle_user_list section {
-    overflow-y: auto;
-    flex: 1;
-}
-.toggle_user_list section li {
-    padding: 10px 20px;
-    display: flex;
-}
-
-.toggle_user_list section li .avatar{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: lightgray;
-}
-.toggle_user_list section li .avatar + div{
-    align-self: center;
-    margin-left: 10px;
-    color: lightgray;
-    flex: 1;
-}
-
-.toggle_user_list section li .avatar + div + div {
-    background: aqua;
-    height: 40px;
-    padding: 0 10px;
-    border-radius:10px;
-    font-size: 14px;
-    line-height: 40px;
-}
-
-.toggle_user_list .search{
-    padding: 10px;
-}
-.toggle_user_list .search input {
-    display: block;
-    width: 100%;
-    height: 36px;
-    font-size: 18px;
-    border-radius: 3px;
-    border:1px solid #ddd;
-    padding:0 10px;
-}
-
-
-.toggle_feedback{
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: #fff;
-    width: 550px;
-    height: 450px;
-    border: 1px solid orange;
-    display: flex;
-    flex-direction: column;
-    display: none;
-}
-.toggle_feedback.active{
-    display: flex;
-}
-
-.toggle_feedback .header{
-    background: #555;
-    font-size:20px;
-    color: orange;
-    padding: 15px 0;
-    text-align: center;
-}
-.toggle_feedback section{
-    padding: 10px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.toggle_feedback section .desc {
-    text-align: center
-}
-.toggle_feedback section .content {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    xjustify-content: space-between;
-    flex-direction: column;
-    display: flex;
-}
-.toggle_feedback section .content textarea{
-    font-size: 16px;
-    width: 100%;
-    resize: none;
-    border-radius: 10px;
-    border: 1px solid #555;
-    padding:10px;
-    display: block;
-    flex: 1;
-    margin-bottom: 10px;
-    outline: 0;
-}
-
-.toggle_feedback section .content button {
-    background: orange;
-    border:none;
-    padding: 10px 20px;
-    font-size: 18px;
-    color: #fff;
-    border-radius:10px;
-}
-
-/* #content .left .top,
-#content .left .bottom {
-    flex: 1;
-}
-
-#content .left .top{
-    background: burlywood;
-}
-
-#content .left .bottom {
-    background: rosybrown;
-} */

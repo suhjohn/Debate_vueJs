@@ -5,10 +5,10 @@
 			<nav class="aligner-item">
 				<ul>
 					<li>
-						<a href="#a">Debates</a>
+						<a href="#a" v-on:click="test">Debates</a>
 					</li>
 					<li>
-						<a href="#a">About</a>    
+						<a href="#a" v-on:click="test2">About</a>    
 					</li>
 				</ul>
 			</nav>
@@ -21,6 +21,13 @@
 </template>
 
 <script>
+
+function getRandomIntInclusive(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var isActive = true;
+
 export default {
 	name: 'Header',
 	  
@@ -29,7 +36,17 @@ export default {
       		topic: 'Do you agree that stricter gun control laws should be made?',
 			sub_topic: 'Does the Second Amendment protect individual gun ownership?',
     	}
-  	}
+	  },
+	  
+	methods: {
+		test(){
+			this.$store.dispatch('updateAlarmState', getRandomIntInclusive(0, 2));
+		},
+		test2(){
+			isActive = !isActive;
+			this.$store.dispatch('updateReadyChatActive', isActive);
+		},
+	}
 }
 </script>
 

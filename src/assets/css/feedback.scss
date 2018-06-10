@@ -1,0 +1,64 @@
+
+.toggle_feedback{
+    position: absolute;
+    right: -550px;
+    top: 0;
+    background: #fff;
+    width: 550px;
+    height: 450px;
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    z-index: 300;
+}
+.toggle_feedback.active{
+    display: flex;
+}
+
+.toggle_feedback .header{
+    background: #555;
+    font-size:20px;
+    color: orange;
+    padding: 15px 0;
+    text-align: center;
+}
+.toggle_feedback section{
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle_feedback section .desc {
+    text-align: center
+}
+.toggle_feedback section .content {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    xjustify-content: space-between;
+    flex-direction: column;
+    display: flex;
+}
+.toggle_feedback section .content textarea{
+    font-size: 16px;
+    width: 100%;
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid #555;
+    padding:10px;
+    display: block;
+    flex: 1;
+    margin-bottom: 10px;
+    outline: 0;
+}
+
+.toggle_feedback section .content button {
+    background: orange;
+    border:none;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    border-radius:10px;
+}

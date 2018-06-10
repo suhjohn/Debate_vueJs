@@ -1,16 +1,17 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex)
 
 
 
-const USERS_COLLECTION = 'USERS'
-const LIST_COLLECTION  = 'List'
-const TODO_COLLECTION  = 'Todos'
-const STORAGE_KEY      = 'MY_TODO'
-const PUSH_COLLECTION = 'PUSH'
-const NOTIFICATION_COLLECTION = 'Notification'
+
+
+const ALARM_STATE_COLLECTION = [
+    'REPRESENTER_CHOSEN', //
+    'REPRESENTER', //대표로 선택됨
+    'REPRESENTER_VOTE' //대표자 투표
+];
 
 const store = new Vuex.Store({
     state: {
@@ -27,6 +28,8 @@ const store = new Vuex.Store({
         ],
         readyChatActive: true,
         representChatActive: false,
+        menuActive: false,
+        alarmState: null,
     },
     getters: {
         isLogined: state => {
@@ -43,6 +46,22 @@ const store = new Vuex.Store({
         setUserData(state, user){
             state.user = user
         },
+        updateMenuActive(state, active){
+            state.menuActive = active;
+        },
+        updateAlarmState(state, alaram){
+            state.alarmState = ALARM_STATE_COLLECTION[alaram];
+
+            setTimeout(() => {
+                state.alarmState = null;
+            }, 1500);
+        },
+        updateReadyChatActive(state, active){
+            state.readyChatActive = active;
+        },
+        sendReadyChatMessage(state, payload){
+            state.messageRoom1.push(payload);
+        }
     },
     actions: {
         login(context, payload){
@@ -51,8 +70,33 @@ const store = new Vuex.Store({
         logout(context){
             
         },
-        setUserData(context, payload){
-            
+        sendReadyChatMessage(context, message){
+            const data = {
+                event_name : "chat",
+                payload: {
+                    "body"     : message,
+                    "timestamp": new Date().getTime()
+                }
+            };
+            //webSocketClient.send(data);
+
+            context.commit('sendReadyChatMessage', {
+                name: 'me',
+                message: message,
+                like: {
+                    count: 0,
+                    likeByMe: false
+                }
+            });
+        },
+        updateMenuActive(context, active){
+            context.commit('updateMenuActive', active);
+        },
+        updateAlarmState(context, alaram){
+            context.commit('updateAlarmState', alaram);
+        },
+        updateReadyChatActive(context, active){
+            context.commit('updateReadyChatActive', active);
         },
     }
 })

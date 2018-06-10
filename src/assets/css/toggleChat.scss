@@ -1,0 +1,87 @@
+.toggle_chat {
+    display: flex;
+    position: absolute;
+    xleft: 0;
+    width: 500px;
+    height: 500px;
+    background: white;
+    top:0px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 2px;
+    z-index:100;
+
+    &.hide{
+        display: none;
+    }
+
+    header{
+        padding: 10px;
+        text-align: center;
+        background: red;
+        color: #fff;
+    }
+
+    section {
+        overflow-y: auto;
+        flex: 1;
+        overflow-y: auto;
+        box-flex: 1;
+        -webkit-box-flex: 1;
+    }
+    .messages {
+        padding:0 15px;
+    }
+    .row {
+        border-bottom: 1px solid #ddd;
+
+        .label{
+            display: inline-block;
+            background: lightgray;
+            color: #fff;
+            font-size:11px;
+            width:30px;
+            height:18px;
+            line-height:18px;
+            text-align: center;
+            border-radius:4px;
+            padding: 0;
+        }
+    }
+
+    #footer{
+        border-top:1px solid;
+        align-self: flex-end;
+        width:100%;
+        display: flex;
+
+        textarea{
+            display: block;
+            flex: 1;
+            border: 0;
+            outline: 0;
+            padding: 10px;
+            resize: none;
+            font-size: 14px;
+        }
+
+        button {
+            width: 76px;
+        }
+    }
+}
+
+
+
+.toggle{
+    width: 70px;
+    position: absolute;
+    xleft: 50%;
+    xmargin-left:50px;
+    xtop:128px;
+    background: yellowgreen;
+    padding: 2px;
+    border-radius:3px;
+    cursor: pointer;
+    z-index: 200;
+}
