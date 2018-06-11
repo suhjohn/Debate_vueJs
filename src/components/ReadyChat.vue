@@ -26,6 +26,7 @@
             <AutoSizeTextarea
                 :disabled="!readyChatActive"
                 :submit="sendAction"
+                scrollMinHeight="50"
                 placeholder="Chat away here! Press Shift+Enter to change lines, Enter to send"
             />
 

@@ -33,13 +33,20 @@
                 align-self: flex-end;
                 width: 100%;
                 padding: 10px 0;
-                background: aqua;
+                background: #ccdcf8;
+                
                 
                 &.active{
                     background: transparent;
+                    
+                    .message_input {
+                        //color: rgba(0, 0, 0, 0.1);
+                        color: #3c3c3c;
+                    }
                 }
 
                 .message_input {
+                    color: #fff;
                     background: transparent;
                     width: 100%;
                     resize: none;
@@ -51,8 +58,6 @@
                     xdisplay: block;
                     min-height: 20px;
                     height: 20px;
-
-                    
                 }
             }
         }
@@ -97,7 +102,7 @@
 
         .toggle_wrap{
             position: fixed;
-            top:128px;
+            top:170px;
             left:50%;
             margin-left:50px;
             width:100%;

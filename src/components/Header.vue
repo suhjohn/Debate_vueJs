@@ -1,7 +1,7 @@
 <template>
 	<header>
 		<div class="topic">
-			<h1>{{ topic }}</h1>
+			<h1 class="title_font_color">{{ topic }}</h1>
 			<nav class="aligner-item">
 				<ul>
 					<li>
@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="sub_topic">
-			<h3 class="sub_title_font_color">sub topic1 : {{ sub_topic }}</h3>
+			<h3 class="title_font_color">sub topic1 : {{ sub_topic }}</h3>
 		</div>
 	</header>
 </template>
