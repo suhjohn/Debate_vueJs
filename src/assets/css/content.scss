@@ -62,30 +62,37 @@
         position: relative;
 
         .messages{
-            padding:0px 30px;
+            padding:20px 50px 0 50px;
         }
 
-        .row .content > div:first-child{
-            display: flex;
-
-            .name{
-                flex: 1;
+        .row .content {
+            > div:first-child{
+                margin-bottom: 6px;
+                display: flex;
+    
+                .name{
+                    flex: 1;
+                }
+    
+                .vote_result{
+                    font-size: 12px;
+                    color: rgba(173, 173, 173, 0.4);
+    
+                    &:before{
+                        content: '';
+                        display: inline-block;
+                        width: 10px;
+                        height: 14px;
+                        background: #ddd;
+                        margin-right: 10px;
+                        vertical-align: bottom;
+                    }
+                }            
             }
 
-            .vote_result{
-                font-size: 11px;
-                color: #ddd;
-
-                &:before{
-                    content: '';
-                    display: inline-block;
-                    width: 10px;
-                    height: 14px;
-                    background: #ddd;
-                    margin-right: 10px;
-                    vertical-align: bottom;
-                }
-            }            
+            .message {
+                font-size: 14px;
+            }
         }
 
         .toggle_wrap{
@@ -108,8 +115,8 @@
         }
 
         .avatar{
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             background: lightgray;
             border-radius:50%;
             margin-right:10px;
@@ -117,10 +124,14 @@
         }
 
         .name{
-            color: lightgray;
+            font-weight: bold;
+            font-size: 14px;
+            color: #cccccc;
         }
 
         .message{
+            color: #3c3c3c;
+            font-size: 12px;
             word-break: break-all;
         }
 
@@ -130,14 +141,18 @@
 
         .like{
             &.count{
+                width: 50px;
                 display: inline-block;
                 background: #ddd;
                 padding: 5px 10px 5px 24px;
                 color: #555;
                 border-radius:8px;
-                font-size: 11px;
+                font-size: 12px;
                 cursor: pointer;
                 margin-top:5px;
+                font-weight: 500;
+                color: rgba(173, 173, 173, 0.4);
+                border: solid 1px #979797;
             }
             &.active{
                 background: orange;
@@ -146,7 +161,8 @@
         }
         
         &.block {
-            margin:10px 0;
+            xmargin:10px 0;
+            margin-bottom:20px;
             max-width: 90%;
             position: relative;
 
@@ -155,7 +171,7 @@
                 xflex-direction: row;
                 width: 100%;
                 border: 1px solid;
-                padding: 10px 15px;
+                padding: 20px;
                 border-radius: 10px;
 
                 > div {
@@ -165,13 +181,18 @@
             }
 
             &.pros{
-                background: lightcoral;
+                
+                box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+                background-color: #fff9f9;
+                border: solid 1px #e7e7e7;
                 margin-right: auto;
             }
 
             &.cons {
                 margin-left: auto;
-                background: lightcyan;
+                box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+                background-color: #f5f9ff;
+                border: solid 1px #e7e7e7;
             }
 
             .name{

@@ -63,8 +63,10 @@ export default {
 
     methods: {
         autoResize(e){
+
             if(e.keyCode === 13 && e.type == 'keyup' && !e.shiftKey) {
-                if(e.target.value){
+                
+                if( e.target.value.trim().length > 0 ){
                     this.submit(e.target.value);
                 }
                 
