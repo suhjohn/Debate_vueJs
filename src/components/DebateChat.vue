@@ -1,5 +1,5 @@
 <template>
-	<div class="debate_chat_wrap messages">
+	<div class="debate_chat_wrap messages" v-chat-scroll="{always: true, smooth: true}">
 		<div class="row block" 
 			v-bind:class="[ row.pros ? 'pros' : 'cons' ]" 
 			v-for="row in messageRoom3">

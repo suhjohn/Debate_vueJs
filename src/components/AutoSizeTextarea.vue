@@ -20,13 +20,16 @@ export default {
 
     //['placeholder', 'submit', 'disabled', 'scrollMaxHeight', 'scrollMinHeight']
     props: {
+        enterToSubmit: {
+            type: Boolean,
+            default: true 
+        },
         placeholder: {
             type: String,
             default: ''
         },
         submit: {
             type: Function,
-            required: true
         },
         disabled: {
             type: Boolean,
@@ -63,7 +66,7 @@ export default {
 
     methods: {
         autoResize(e){
-            if(e.keyCode === 13 && e.type == 'keyup' && !e.shiftKey) {
+            if(this.enterToSubmit && e.keyCode === 13 && e.type == 'keyup' && !e.shiftKey) {
                 if(e.target.value){
                     this.submit(e.target.value);
                 }
@@ -85,7 +88,12 @@ export default {
         },
 
         resetMessage(){
+            this.$refs.message_input.style.height = this.scrollMinHeight + 'px';
             this.$refs.message_input.value = '';
+        },
+
+        getValue(){
+            return this.$refs.message_input.value;
         },
     }
 }

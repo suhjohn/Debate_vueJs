@@ -7,7 +7,7 @@
                 <h3>Representatives’ Proposals</h3>
             </header>
             <section>
-                <div class="messages">
+                <div class="messages" v-chat-scroll="{always: true, smooth: true}">
                     <div class="row" v-for="(row, idx) in messageRoom2">
                         <div class="avatar"></div>
                         <div class="content">
@@ -37,11 +37,12 @@
             </section>
             <div id="footer">
                 <AutoSizeTextarea
-                    :submit="sendAction"
+                    ref="messageInput"
                     scrollMinHeight="70"
+                    :enterToSubmit="false"
                     placeholder="Type out your argument! Your argument will be voted on soon"
                 />
-                <button class="send">Submit<br>Argument</button>
+                <button class="send" v-on:click="sendAction">Submit<br>Argument</button>
             </div>
         </div>
     </div>
@@ -108,7 +109,16 @@ export default {
         },
 
         sendAction(){
+            const message = this.$refs.messageInput.getValue();
 
+            this.messageRoom2.push({
+                name: 'me',
+                message: message,
+                voteCount: 0,
+                vote: true
+            });
+
+            this.$refs.messageInput.resetMessage();
         }
     }
 }

@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import Snotify from 'vue-snotify';
 
 //import App from './Home';
 import App from './App';
@@ -11,7 +12,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$http      = axios;
 
 
-
+Vue.use(Snotify);
 //Vue.use(VueWebsocket, "ws://Squarrel-Server-Dev.ap-northeast-2.elasticbeanstalk.com");
 
 

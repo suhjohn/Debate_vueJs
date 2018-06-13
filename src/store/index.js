@@ -78,16 +78,21 @@ const store = new Vuex.Store({
                     "timestamp": new Date().getTime()
                 }
             };
-            //webSocketClient.send(data);
+            
+            let json = JSON.stringify(data);
 
-            context.commit('sendReadyChatMessage', {
-                name: 'me',
-                message: message,
-                like: {
-                    count: 0,
-                    likeByMe: false
-                }
-            });
+            console.log(json);
+
+            //webSocketClient.send( json );
+
+            // context.commit('sendReadyChatMessage', {
+            //     name: 'me',
+            //     message: message,
+            //     like: {
+            //         count: 0,
+            //         likeByMe: false
+            //     }
+            // });
         },
         updateMenuActive(context, active){
             context.commit('updateMenuActive', active);
