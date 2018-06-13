@@ -4,13 +4,15 @@ header {
     background: black;
 
     .topic {
-        padding: 20px 10px;
+        height: 100px;
+        line-height: 100px;
         display: flex;
+        padding: 0 20px;
 
         h1 {
             flex: 1;
             font-size:24px;
-            color:#fff;
+            font-weight: normal;
         }
 
         nav {
@@ -34,12 +36,22 @@ header {
     }
 
     .sub_topic{
-        background: #555;
-        padding: 20px;
+        xpadding: 20px;
         text-align: center;
-        font-size:14px;
+        
+        
         box-shadow: 0 4px 2px -2px gray;
         position: relative;
         z-index: 300;
+
+        height: 70px;
+        line-height: 70px;
+        background-color: #565656;
+        box-shadow: 2px 4px 2px 0 rgba(0, 0, 0, 0.5);
+
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+        }
     }
 }

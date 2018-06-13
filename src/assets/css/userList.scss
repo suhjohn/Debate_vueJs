@@ -6,9 +6,10 @@
     width: 550px;
     height: 450px;
     display: flex;
-    border: 1px solid orange;
     display: none;
     z-index: 300;
+
+    box-shadow: 2px 2px 4px 0 rgba(28, 28, 28, 0.5);
 
     &.active {
         display: flex;
@@ -21,10 +22,9 @@
     }
 
     .header{
-    
-        background: #555;
+        background-color: #ff7f50;
         padding: 20px 0 20px 20px;
-        color: bisque;
+        color:#fff;
     }
 }
 
@@ -35,7 +35,7 @@
 }
 
 .toggle_user_list > div.repesenters .header {
-    border-right: 0.5px solid bisque;
+    xborder-right: 0.5px solid bisque;
 }
 
 .toggle_user_list > div.all_users{
@@ -75,6 +75,7 @@
 
 .toggle_user_list .search{
     padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 .toggle_user_list .search input {
     display: block;
