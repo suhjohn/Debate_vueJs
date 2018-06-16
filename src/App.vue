@@ -13,7 +13,6 @@
 <script>
 	import Vue from "vue";
 	import axios from "axios";
-	import VueNativeSock from "vue-native-websocket";
 	
 	import Header from "./components/Header";
 	import Footer from "./components/Footer";
@@ -45,49 +44,36 @@
 					password: "asdf"
 				};
 	
-				const res = await this.axios
-					.post("/api/auth/login/", d, {
-						headers: {
-							"Content-Type": "application/json",
-							"Access-Control-Allow-Origin": "*",
-							"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-							"Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-						}
-					})
+				const res = await this.axios.post("/api/auth/login/", d)
+				this.axios.defaults.headers['Authorization'] = res.data.token;
+				this.$store.commit('setUserToken', res.data.token);
 				await this.checkDebateUser(res.data.token);
-	
 			},
 	
 			async checkDebateUser(token) {
+				// Assume this is form data
 				const d1 = {
 					team_id: 1,
 					nickname: "test1234",
 					start_opinion: 0.1
 				};
-	
-				const d2 = {
+
+				// Assume that we have the current debate_id
+				const query_params = {
 					debate_id: 1
 				};
+
+				// Get debateuser result
 				let res = null;
 				try {
-					res = await this.axios
-						.get("/api/users/self/debateusers/", {
-							params: d2,
-							headers: {
-								"Content-Type": "application/json",
-								"Access-Control-Allow-Origin": "*",
-								"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-								"Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization",
-	
-								Authorization: token
-							}
-						})
+					res = await this.axios.get("/api/users/self/debateusers/", {params: query_params})
 				} catch (err) {
 					console.log(err);
 				}
 	
 				let debateUser = res.data.results[0];
 				if (debateUser) {
+					// console log is for debugging - erase them as you wish
 					console.log("[checkDebateUser] Received debateUser")
 					const debateUserToken = debateUser.token.split(" ")[1];
 					console.log("[checkDebateUser] Received token from debateUser: " + debateUserToken);

@@ -27,6 +27,7 @@ const store = new Vuex.Store({
     menuActive: false,
     alarmState: null,
     debateUserToken: "",
+    userToken: "",
     wsConnection: null
   },
   getters: {
@@ -61,13 +62,17 @@ const store = new Vuex.Store({
       state.readyChatActive = active;
     },
     sendReadyChatMessage(state, payload) {
-      console.log("[sendReadyChatMessage] sending message: "+ payload)
+      console.log("[sendReadyChatMessage] sending message: "+ JSON.stringify(payload))
       state.wsConnection.send(payload);
       state.messageRoom1.push(payload);
     },
     setDebateUserToken(state, token) {
       console.log("[setDebateUserToken] Set DebateUserToken to Vuex");
       state.debateUserToken = token;
+    },
+    setUserToken(state, token){
+      console.log("[setUserToken] Set setUserToken to Vuex and axios");
+      state.userToken = token;
     },
     setWebsocketConnection(state, token) {
       console.log("[setWebsocketConnection] Set wsConnection to Vuex");
