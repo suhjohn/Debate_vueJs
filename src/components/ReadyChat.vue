@@ -94,7 +94,7 @@ export default {
             //         likeByMe: false,
             //     }
             // };
-
+            
             this.$store.dispatch('sendReadyChatMessage', message);
         },
 

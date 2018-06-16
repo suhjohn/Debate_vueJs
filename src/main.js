@@ -14,7 +14,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$http      = axios;
 
 
-
+axios.defaults.baseURL = "http://Squarrel-Server-Dev.ap-northeast-2.elasticbeanstalk.com"
 Vue.use(VueAxios, axios);
 Vue.use(Snotify);
 
