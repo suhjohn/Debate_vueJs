@@ -40,7 +40,7 @@ export default {
 	  
 	methods: {
 		test(){
-			vm.$snotify.success('Example body content');
+			//vm.$snotify.success('Example body content');
 			
 			this.$store.dispatch('updateAlarmState', getRandomIntInclusive(0, 2));
 		},

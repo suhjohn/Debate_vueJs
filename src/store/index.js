@@ -4,9 +4,6 @@ import Vuex from 'vuex';
 Vue.use(Vuex)
 
 
-
-
-
 const ALARM_STATE_COLLECTION = [
     'REPRESENTER_CHOSEN', //
     'REPRESENTER', //대표로 선택됨
@@ -82,7 +79,6 @@ const store = new Vuex.Store({
             let json = JSON.stringify(data);
 
             console.log(json);
-
             //webSocketClient.send( json );
 
             // context.commit('sendReadyChatMessage', {

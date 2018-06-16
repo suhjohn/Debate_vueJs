@@ -8,15 +8,22 @@
 	<body>
 		<div id="app"></div>
 		
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script>
-			const webSocketClient = new WebSocket("ws://Squarrel-Server-Dev.ap-northeast-2.elasticbeanstalk.com/ws/");
-			
-			
+			const BaseUrl = 'http://Squarrel-Server-Dev.ap-northeast-2.elasticbeanstalk.com';
 
-			webSocketClient.onmessage = function(e){
-				console.log(e);
-			}
+			// const token = '';
+			// const webSocketClient = new WebSocket("ws://Squarrel-Server-Dev.ap-northeast-2.elasticbeanstalk.com/ws/", token);
+	
+			
+			// webSocketClient.onopen = function(e){
+			// 	console.log(e);
+			// 	webSocketClient.send( JSON.stringify(data) );
+			// }
+			
+			// webSocketClient.onmessage = function(e){
+			// 	console.log(e);
+			// }
 		</script>
   	</body>
 </html>
